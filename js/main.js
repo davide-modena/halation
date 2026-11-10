@@ -17,7 +17,8 @@ import { encodePNG, makeZip, download, copyImage, pickVideoMime, timestamp, slug
 import { track } from './analytics.js';
 
 // Source repository (forks: point this at your own).
-const REPO_URL = 'https://github.com/AR13X3/halation';
+// Unofficial fork: links point to this fork's source, as the AGPL asks.
+const REPO_URL = 'https://github.com/davide-modena/halation';
 const COFFEE_URL = 'https://buymeacoffee.com/ar13x3';
 
 const $ = (s) => document.querySelector(s);
@@ -523,7 +524,7 @@ const helpMenu = $('#help-menu');
 setIcon('#btn-tour', 'compass', 'Tutorial').onclick = () => tour.start();
 setIcon('#btn-keys', 'keyboard', 'Keyboard shortcuts').onclick = () => $('#help').showModal();
 $('#btn-keys').insertAdjacentHTML('beforeend', '<kbd>?</kbd>');
-setIcon('#btn-guide', 'book', 'User guide').href = `${REPO_URL}/blob/main/docs/GUIDE.md`;
+setIcon('#btn-guide', 'book', 'User guide').href = `${REPO_URL}/blob/deploy/docs/GUIDE.md`;
 setIcon('#btn-github', 'github', 'Source on GitHub').href = REPO_URL;
 for (const [sel, label] of [['#btn-support', 'Support'], ['#btn-coffee', 'Buy me a coffee']]) {
   const el = setIcon(sel, 'coffee', label);
@@ -932,7 +933,7 @@ const tour = createTour({
   clearSearch: () => panel.clearSearch(),
   showSection: (id) => { if (phoneQuery.matches) setEditing(true); if (id) panel.showTab(id); },
   showDock: () => { setEditing(false); presetsPanel.close(); },
-  guideUrl: `${REPO_URL}/blob/main/docs/GUIDE.md`,
+  guideUrl: `${REPO_URL}/blob/deploy/docs/GUIDE.md`,
 });
 
 let syncQueued = false;
