@@ -1246,3 +1246,6 @@ kbd {
   .toast { max-width: 100%; }
 }
 @keyframes sheet-up { from { opacity: 0; transform: translateY(12px); } }
+
+/* Hide the Netlify badge and preview toolbar on the hosted copy. */
+#nl-badge-frame, #nl-hud-frame { display: none !important; }
